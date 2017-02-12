@@ -1,6 +1,9 @@
 use machine::state::State;
 
-pub fn geta(_state: &mut State, _x: u8, _y: u8, _z: u8) {
-    unimplemented!();
-}
+pub fn geta(state: &mut State, x: u8, y: u8, z: u8) {
+    // Execute
+    let res: u64 = (y as u64).wrapping_add(z as u64);
 
+    // Store result
+    state.gpr[x] = res.into();
+}
